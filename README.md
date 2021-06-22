@@ -14,4 +14,7 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-[![Velog's GitHub stats](https://velog-readme-stats.vercel.app/api/badge?name=junqwoopark)](https://velog.io/@junqwoopark) 
+[![Velog's GitHub stats](https://velog-readme-stats.vercel.app/api/badge?name=Velog)](https://velog.io/@junqwoopark)
+
+[![Velog's GitHub stats](https://velog-readme-stats.vercel.app/api?name=junqwoopark)](https://github.com/eungyeole/velog-readme-stats)
+
