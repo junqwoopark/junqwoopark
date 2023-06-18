@@ -1,3 +1,5 @@
+#define MOD 1000000007
+
 class Solution {
 private:
     int m, n;
@@ -17,12 +19,13 @@ private:
                 
                 if (0 <= nx && nx < m && 0 <= ny && ny < n) { // check range
                     if (grid[x][y] < grid[nx][ny]) { // check strictly increasing
-                        ret += countOfPathsAtNextCell(nx, ny, grid) % 1000000007;
+                        ret += countOfPathsAtNextCell(nx, ny, grid);
+                        ret %= MOD;
                     }
                 }
             }
         }
-        dp[x][y] = ret % 1000000007;
+        dp[x][y] = ret;
         return ret;
     }
 public:
@@ -36,7 +39,7 @@ public:
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 answer += countOfPathsAtNextCell(i, j, grid);
-                answer %= 1000000007;
+                answer %= MOD;
             }
         }
         return answer;
