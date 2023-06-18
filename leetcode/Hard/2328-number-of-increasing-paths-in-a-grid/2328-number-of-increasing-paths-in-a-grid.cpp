@@ -8,25 +8,24 @@ private:
     vector<vector<int>> dp;
     
     int countOfPathsAtNextCell(int x, int y, vector<vector<int>> &grid) {
-        int ret = 0;
+        // int ret = 0;
         if (dp[x][y] != 0) {
             return dp[x][y];
         } else {
-            ret += 1; // currentNode;
+            dp[x][y] += 1; // currentNode;
             for (int i = 0; i < 4; i++) {
                 int nx = x + dx[i];
                 int ny = y + dy[i];
                 
                 if (0 <= nx && nx < m && 0 <= ny && ny < n) { // check range
                     if (grid[x][y] < grid[nx][ny]) { // check strictly increasing
-                        ret += countOfPathsAtNextCell(nx, ny, grid);
-                        ret %= MOD;
+                        dp[x][y] += countOfPathsAtNextCell(nx, ny, grid);
+                        dp[x][y] %= MOD;
                     }
                 }
             }
         }
-        dp[x][y] = ret;
-        return ret;
+        return dp[x][y];
     }
 public:
     int countPaths(vector<vector<int>>& grid) {
